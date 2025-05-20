@@ -1,8 +1,15 @@
 import Btn from "./Btn";
 
-export default function Modal() {
+type Props = {
+  view: boolean;
+  setView: (v: boolean) => void;
+};
+
+export default function Modal({ view, setView }: Props) {
   return (
-    <div className="flex px-4 h-screen justify-around tablet:p-[4rem] flex-col gap-[2rem]">
+    <div
+      className={`${!view && "hidden"} tablet:animate-start linear desktop:w-3/10 tablet:shadow-[0px_15px_60px_rgba(0,0,0,.25)] tablet:h-fit tablet:w-7/10 tablet:rounded-[2rem] tablet:p-[4rem] flex h-screen flex-col justify-around gap-[2rem] bg-white px-4 transition-all duration-300`}
+    >
       <div className="flex flex-col gap-4">
         <img
           className="w-[4rem]"
@@ -18,7 +25,7 @@ export default function Modal() {
           button inside to confirm your subscription.
         </p>
       </div>
-      <Btn>Dismiss message</Btn>
+      <Btn setView={setView}>Dismiss message</Btn>
     </div>
   );
 }

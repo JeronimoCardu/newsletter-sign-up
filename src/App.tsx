@@ -1,10 +1,15 @@
-import Btn from "./components/Btn";
+import { useState } from "react";
 import EmailInput from "./components/EmailInput";
+import Modal from "./components/Modal";
 
 export default function App() {
+  const [view, setView] = useState<boolean>(false);
   return (
     <>
-      <article className="desktop:grid tablet:h-fit desktop:w-fit desktop:grid-cols-2 tablet:rounded-[2.25rem] h-screen bg-white">
+      <Modal view={view} setView={setView} />
+      <article
+        className={`${view && "!hidden"} linear desktop:grid tablet:h-fit desktop:w-fit desktop:grid-cols-2 tablet:rounded-[2.25rem] h-screen bg-white transition-all duration-300`}
+      >
         <img
           className="desktop:hidden tablet:rounded-[2.5rem] tablet:p-6 w-full"
           src="/assets/images/illustration-sign-up-mobile.svg"
@@ -33,13 +38,7 @@ export default function App() {
               And much more!
             </li>
           </ul>
-          <div>
-            <label className="textPreset3" htmlFor="email">
-              Email address
-            </label>
-            <EmailInput />
-          </div>
-          <Btn>Subscribe to monthly newletter</Btn>
+          <EmailInput setView={setView} />
         </section>
       </article>
     </>

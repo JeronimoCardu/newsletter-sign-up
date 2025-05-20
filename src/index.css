@@ -33,8 +33,19 @@ html,
   --color-red: #ff6155;
   /* Gradient: FF6A3A to right FF527B */
 
-  --breakpoint-tablet: 376px;
-  --breakpoint-desktop: 769px;
+  --breakpoint-tablet: 769px;
+  --breakpoint-desktop: 1441px;
+
+  --animate-start: start 0.3s ease;
+
+  @keyframes start {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 }
 
 @layer base {

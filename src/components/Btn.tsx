@@ -1,10 +1,14 @@
 type Props = {
   children: string;
+  setView?: (v: boolean) => void;
 };
 
-export default function Btn({ children }: Props) {
+export default function Btn({ setView, children }: Props) {
   return (
-    <button className="bg-blue-800 hover:shadow-[0px_16px_32px_rgba(255,97,85,0.5)] cursor-pointer hover:bg-gradient-to-r hover:from-[#FF6A3A] hover:to-[#FF527B] textPreset2Bold py-4 w-full rounded-[.5rem] text-white">
+    <button
+      onClick={() => children.includes("Dismiss") && setView && setView(false)}
+      className="textPreset2Bold w-full cursor-pointer rounded-[.5rem] bg-blue-800 py-4 text-white hover:bg-gradient-to-r hover:from-[#FF6A3A] hover:to-[#FF527B] hover:shadow-[0px_16px_32px_rgba(255,97,85,0.5)]"
+    >
       {children}
     </button>
   );
