@@ -28,13 +28,13 @@ export default function App() {
             Join 60,000+ product managers receiving monthly updates on:
           </p>
           <ul>
-            <li className="textPreset2Regular relative flex list-none gap-4 before:content-[url(assets/images/icon-list.svg)]">
+            <li className="textPreset2Regular relative flex list-none gap-4 before:content-[url(/assets/images/icon-list.svg)]">
               Product discovery and building what matters
             </li>
-            <li className="textPreset2Regular relative flex list-none gap-4 before:content-[url(assets/images/icon-list.svg)]">
+            <li className="textPreset2Regular relative flex list-none gap-4 before:content-[url(/assets/images/icon-list.svg)]">
               Measuring to ensure updates are a success
             </li>
-            <li className="textPreset2Regular relative flex list-none gap-4 before:content-[url(assets/images/icon-list.svg)]">
+            <li className="textPreset2Regular relative flex list-none gap-4 before:content-[url(/assets/images/icon-list.svg)]">
               And much more!
             </li>
           </ul>
